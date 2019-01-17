@@ -1,6 +1,6 @@
 {
   "name": "@dxworks/miles",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "main": "dist/client.js",
   "module": "src/client.js",
   "license": "MIT",
@@ -18,12 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dxworks/miles.git"
+    "url": "git+https://github.com/dxworks/oss.git"
   },
   "bugs": {
-    "url": "https://github.com/dxworks/miles/issues"
+    "url": "https://github.com/dxworks/oss/issues"
   },
-  "homepage": "https://github.com/dxworks/miles#readme",
+  "homepage": "https://github.com/dxworks/oss#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -41,7 +41,7 @@
     "postbuild": "node ncc.js"
   },
   "dependencies": {
-    "@dxworks/utils": "1.0.0"
+    "@dxworks/utils": "1.0.1"
   },
   "devDependencies": {
     "@zeit/ncc": "latest", 
