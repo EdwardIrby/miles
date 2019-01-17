@@ -1,0 +1,58 @@
+{
+  "name": "@dxworks/miles",
+  "version": "0.6.7",
+  "main": "dist/client.js",
+  "module": "src/client.js",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Edward Irby",
+      "email": "edward@castersblues.com",
+      "url": "https://twitter.com/edwardirby"
+    },
+    {
+      "name": "Ali Stump",
+      "email": "alison@alisonstump.com",
+      "url": "https://twitter.com/alisonailea"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxworks/miles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dxworks/miles/issues"
+  },
+  "homepage": "https://github.com/dxworks/miles#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "bin": {
+    "miles": "bin/miles"
+  },
+  "scripts": {
+    "test": "npx ava --verbose",
+    "build-test": "node bin/miles src/test/miles.config.js",
+    "prebuild": "rm -rf dist",
+    "build": "npx rollup -c rollup.config.js",
+    "postbuild": "node ncc.js"
+  },
+  "dependencies": {
+    "@dxworks/utils": "1.0.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "latest", 
+    "chokidar": "latest",
+    "arg": "latest",
+    "ava": "latest",
+    "sinon": "latest",
+    "fast-glob": "latest",
+    "rollup": "latest",
+    "rollup-plugin-cleanup": "latest",
+    "rollup-plugin-node-resolve": "latest",
+    "rollup-plugin-commonjs": "latest"
+  }
+}

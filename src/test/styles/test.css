@@ -1,0 +1,25 @@
+.--checkBoxFill1873292623+.hook{--checkBoxFill:var(--checkBoxFill1873292623)}
+.alignItems{align-items:var(--alignItems)}
+.display{display:var(--display)}
+.fontSize{font-size:var(--fontSize)}
+.fontWeight{font-weight:var(--fontWeight)}
+.justifyContent{justify-content:var(--justifyContent)}
+.lineHeight{line-height:var(--lineHeight)}
+.pointerEvents{pointer-events:var(--pointerEvents)}
+.textDecoration{text-decoration:var(--textDecoration)}
+.transition1872142639+.Hook{transition:var(--transition1872142639)}
+.userSelect{user-select:var(--userSelect)}
+.whiteSpace{white-space:var(--whiteSpace)}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+  .backgroundColor-214132658741872142639+.Hook{background-color:var(--backgroundColor-214132658741872142639)}
+  .color-21413265874{color:var(--color-21413265874)}
+  .width-21413265874{width:var(--width-21413265874)}
+}
+@keyframes pulse{
+  0%{
+    background-color:#001f3f;
+  }
+  100%{
+    background-color:#ff4136;
+  }
+}
