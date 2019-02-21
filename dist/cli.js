@@ -3,7 +3,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var utils = require('@dxworks/utils');
-var __chunk_1 = require('./chunk-3b6c2801.js');
+var __chunk_1 = require('./chunk-3088c3a2.js');
 var fs = _interopDefault(require('fs'));
 var path = require('path');
 var path__default = _interopDefault(path);
@@ -371,21 +371,21 @@ const write = async (config = defaultConfig) => {
     filePath,
   });
   const {
-    name: name$$1 = name,
-    pattern: pattern$$1 = pattern,
-    input: input$$1 = input,
-    output: output$$1 = output,
-    external: external$$1 = external,
+    name: name$1 = name,
+    pattern: pattern$1 = pattern,
+    input: input$1 = input,
+    output: output$1 = output,
+    external: external$1 = external,
   } = milesConfig;
-  const inputGlobPattern = path__default.resolve(process.cwd(), `${input$$1}/${pattern$$1}`);
+  const inputGlobPattern = path__default.resolve(process.cwd(), `${input$1}/${pattern$1}`);
   const files = await fg(inputGlobPattern);
-  const css = await generate({ files, external: external$$1 });
-  const outputPath = path__default.resolve(process.cwd(), `${output$$1}`);
+  const css = await generate({ files, external: external$1 });
+  const outputPath = path__default.resolve(process.cwd(), `${output$1}`);
   fs.mkdirSync(outputPath, { recursive: true });
-  fs.writeFile(`${outputPath}/${name$$1}.css`, css, err => {
+  fs.writeFile(`${outputPath}/${name$1}.css`, css, err => {
     if (err) throw err;
   });
-  console.log(`${name$$1}.css done!!`);
+  console.log(`${name$1}.css done!!`);
 };
 
 const [, , config] = process.argv;
