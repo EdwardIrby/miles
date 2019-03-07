@@ -1,5 +1,5 @@
-# Miles
-Miles is a CSS-in-JS library. It takes a hybrid approach to CSS-in-JS.
+# Miles (EXPERIMENTAL)
+Miles is an experimental  CSS-in-JS library. It takes a hybrid approach to CSS-in-JS.
 
 ----------
 ## Install

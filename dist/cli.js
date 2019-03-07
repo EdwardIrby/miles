@@ -3,7 +3,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var utils = require('@dxworks/utils');
-var __chunk_1 = require('./chunk-3088c3a2.js');
+var __chunk_1 = require('./chunk-fa287951.js');
 var fs = _interopDefault(require('fs'));
 var path = require('path');
 var path__default = _interopDefault(path);
@@ -40,7 +40,7 @@ function cachedIsFile (file, cb) {
 			.then(
 				function (stat) { return stat.isFile(); },
 				function (err) {
-					if (err.code == 'ENOENT') { return false; }
+					if (err.code === 'ENOENT') { return false; }
 					delete isFileCache[file];
 					throw err;
 				});
@@ -80,7 +80,7 @@ function nodeResolve ( options ) {
 			isFileCache = {};
 			readFileCache = {};
 		},
-		resolveId: function resolveId$$1 ( importee, importer ) {
+		resolveId: function resolveId ( importee, importer ) {
 			var this$1 = this;
 			if ( /\0/.test( importee ) ) { return null; }
 			var basedir = importer ? path.dirname( importer ) : process.cwd();
@@ -111,7 +111,10 @@ function nodeResolve ( options ) {
 					var pkgRoot = path.dirname( pkgPath );
 					if (options.browser && typeof pkg[ 'browser' ] === 'object') {
 						packageBrowserField = Object.keys(pkg[ 'browser' ]).reduce(function (browser, key) {
-							var resolved = pkg[ 'browser' ][ key ] === false ? false : path.resolve( pkgRoot, pkg[ 'browser' ][ key ] );
+							var resolved = pkg[ 'browser' ][ key ];
+							if (resolved && resolved[0] === '.') {
+								resolved = path.resolve( pkgRoot, pkg[ 'browser' ][ key ] );
+							}
 							browser[ key ] = resolved;
 							if ( key[0] === '.' ) {
 								var absoluteKey = path.resolve( pkgRoot, key );
@@ -148,15 +151,18 @@ function nodeResolve ( options ) {
 				importee,
 				Object.assign( resolveOptions, customResolveOptions )
 			)
-				.catch(function () { return false; })
 				.then(function (resolved) {
-					if (options.browser && packageBrowserField) {
-						if (packageBrowserField[ resolved ]) {
+					if ( resolved && options.browser && packageBrowserField ) {
+						if ( packageBrowserField.hasOwnProperty(resolved) ) {
+							if (!packageBrowserField[resolved]) {
+								browserMapCache[resolved] = packageBrowserField;
+								return ES6_BROWSER_EMPTY;
+							}
 							resolved = packageBrowserField[ resolved ];
 						}
 						browserMapCache[resolved] = packageBrowserField;
 					}
-					if ( !disregardResult && resolved !== false ) {
+					if ( !disregardResult ) {
 						if ( !preserveSymlinks && resolved && fs.existsSync( resolved ) ) {
 							resolved = fs.realpathSync( resolved );
 						}
@@ -178,9 +184,10 @@ function nodeResolve ( options ) {
 					if ( resolved && options.modulesOnly ) {
 						return readFileAsync( resolved, 'utf-8').then(function (code) { return isModule( code ) ? resolved : null; });
 					} else {
-						return resolved === false ? null : resolved;
+						return resolved;
 					}
-				});
+				})
+				.catch(function () { return null; });
 		}
 	};
 }

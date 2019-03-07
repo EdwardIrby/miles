@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const { mkdirSync, writeFile } = require('fs');
 const path = require('path');
-require('@zeit/ncc')('@dxworks/miles/dist/cli.js', {
+require('@zeit/ncc')('./dist/cli.js', {
   // provide a custom cache path or disable caching
   cache: false,
   // externals to leave as requires of the build
