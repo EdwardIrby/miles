@@ -7,10 +7,9 @@ Miles is an experimental  CSS-in-JS library. It takes a hybrid approach to CSS-i
 `npm install -s @dxworks/miles` 
 
 ----------
-## usage
+## className usage
 
-### classNames
-#### Simple Example
+### Simple Example
 **component.js**
 ```js
 import { classNames } from '@dxworks/miles';
@@ -31,7 +30,7 @@ import styles from 'Component.css';
 }
 ```
 
-#### Conditional Example
+### Conditional Example
 **component.js**
 ```js
 import { classNames } from '@dxworks/miles';
@@ -57,9 +56,9 @@ import styles from 'Component.css';
 }
 ```
 
-### tokens
+## tokens usage
 
-#### Simple Example
+### Simple Example
 **Component.js**
 ```jsx
 import { tokens } from '@dxworks/miles';
@@ -78,7 +77,7 @@ import { tokens } from '@dxworks/miles';
   color: var(--randomColor);
 }
 ```
-### Conditional Example
+## Conditional Example
 **Component.js**
 ```jsx
 import { tokens } from '@dxworks/miles';
