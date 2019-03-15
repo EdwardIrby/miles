@@ -1,5 +1,5 @@
 # Miles (EXPERIMENTAL)
-Miles is an experimental  CSS-in-JS library. It takes a hybrid approach to CSS-in-JS. It is design to be used in conjunction with css-modules. It makes use of css custom properties to allow for the dynamic updating of css values and sharing of values between components in the light-dom. Miles consit of two simple utility functions with a very small runtime footprint, **tokens**, and **classNames**.
+Miles is an experimental  CSS-in-JS library. It takes a hybrid approach to CSS-in-JS. It is design to be used in conjunction with css-modules. It makes use of css custom properties to allow for the dynamic updating of css values and sharing of values between components in the light-dom. Miles consist of two simple utility functions with a very small runtime footprint, **tokens**, and **classNames**.
 
 ----------
 ## Install
@@ -81,7 +81,7 @@ import styles from 'Component.css';
 <div className={
  classNames(
    className, // pass through className prop
-   styles.exmaple,
+   styles.example,
    condition && styles.conditionalClass
  ) }
 />
