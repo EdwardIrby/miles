@@ -17,5 +17,3 @@ lerna-debug.log*
 
 #build
 rollup.config.js
-ncc.js
-build/cli.js

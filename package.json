@@ -1,8 +1,8 @@
 {
   "name": "@dxworks/miles",
-  "version": "0.6.9",
-  "main": "dist/client.js",
-  "module": "src/client.js",
+  "version": "1.0.0",
+  "main": "dist/miles.js",
+  "module": "src/miles.js",
   "license": "MIT",
   "contributors": [
     {
@@ -27,39 +27,29 @@
   "publishConfig": {
     "access": "public"
   },
-  "engines": {
-    "node": ">=10.13.0"
-  },
-  "bin": {
-    "miles": "bin/miles"
-  },
   "scripts": {
-    "test": "npx ava --verbose",
-    "build-test": "node bin/miles src/test/miles.config.js",
-    "prebuild": "rm -rf dist",
+    "test": "npx -n '-r esm' tape  src/**/*.test.js",
+    "test-coverage": "c8 npx -n '-r esm' tape src/**/*.test.js",
+    "report": "c8 report",
     "build": "npx rollup -c rollup.config.js",
-    "postbuild": "node ncc.js",
     "lint": "npx eslint ./src",
-    "check": "npm run build && npm run lint && npm run test"
-  },
-  "dependencies": {
-    "@dxworks/utils": "1.0.1"
+    "check": "npm run build && npm run lint && npm run test",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@zeit/ncc": "latest",
-    "arg": "latest",
-    "ava": "latest",
+    "@dxworks/rite": "latest",
     "babel-eslint": "latest",
+    "c8": "latest",
     "eslint": "latest",
     "eslint-config-airbnb-base": "latest",
     "eslint-import-resolver-webpack": "0.10.1",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsx-a11y": "latest",
     "eslint-plugin-react": "latest",
-    "fast-glob": "latest",
+    "esm": "latest",
     "rollup": "latest",
     "rollup-plugin-cleanup": "latest",
     "rollup-plugin-node-resolve": "latest",
-    "rollup-plugin-commonjs": "latest"
+    "tape": "latest"
   }
 }
