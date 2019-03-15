@@ -13,6 +13,7 @@ Miles is an experimental  CSS-in-JS library. It takes a hybrid approach to CSS-i
 #### Simple Example
 **component.js**
 ```js
+import { classNames } from '@dxworks/miles';
 import styles from 'Component.css';
 
 <div className={
@@ -33,6 +34,7 @@ import styles from 'Component.css';
 #### Conditional Example
 **component.js**
 ```js
+import { classNames } from '@dxworks/miles';
 import styles from 'Component.css';
 
 <div className={
