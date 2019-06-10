@@ -1,7 +1,7 @@
-import { test, assert } from '@dxworks/rite';
-import { classNames } from './classNames.js';
+import { describe } from '@dxworks/rite';
+import { classNames } from './classNames';
 
-test('classNames()', () => {
+describe('classNames()', assert => {
   assert({
     given: 'two string',
     should: 'return properly concatenated string',
