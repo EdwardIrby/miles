@@ -49,5 +49,5 @@ const tokens = (...objs) => objs
  */
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
-exports.tokens = tokens;
 exports.classNames = classNames;
+exports.tokens = tokens;
