@@ -1,6 +1,6 @@
 {
   "name": "@dxworks/miles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/miles.js",
   "module": "src/miles.js",
   "license": "MIT",
@@ -28,9 +28,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "npx -n '-r esm' tape  src/**/*.test.js",
-    "test-coverage": "c8 npx -n '-r esm' tape src/**/*.test.js",
-    "report": "c8 report",
+    "test": "c8 npx tap src/**/*.test.js --no-coverage",
     "build": "npx rollup -c rollup.config.js",
     "lint": "npx eslint ./src",
     "check": "npm run build && npm run lint && npm run test",
@@ -38,18 +36,11 @@
   },
   "devDependencies": {
     "@dxworks/rite": "latest",
-    "babel-eslint": "latest",
-    "c8": "latest",
-    "eslint": "latest",
-    "eslint-config-airbnb-base": "latest",
-    "eslint-import-resolver-webpack": "0.10.1",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-jsx-a11y": "latest",
-    "eslint-plugin-react": "latest",
-    "esm": "latest",
+    "@dxworks/linting": "latest",
     "rollup": "latest",
     "rollup-plugin-cleanup": "latest",
     "rollup-plugin-node-resolve": "latest",
-    "tape": "latest"
+    "tap": "latest",
+    "c8": "^5.0.1"
   }
 }

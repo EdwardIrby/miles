@@ -1,7 +1,7 @@
-import { test, assert } from '@dxworks/rite';
-import { tokens } from './tokens.js';
+import { describe } from '@dxworks/rite';
+import { tokens } from './tokens';
 
-test('tokens()', () => {
+describe('tokens()', assert => {
   const expected = {
     '--width': 32,
     '--height': 24,
@@ -22,7 +22,7 @@ test('tokens()', () => {
   });
 });
 
-test('tokens() conditional test', () => {
+describe('tokens() conditional test', assert => {
   const checked = false;
   const disabled = true;
   const expected = {

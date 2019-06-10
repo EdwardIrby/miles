@@ -1,2 +1,2 @@
-export { tokens } from './tokens/tokens.js';
-export { classNames } from './classNames/classNames.js';
+export { tokens } from './tokens/tokens';
+export { classNames } from './classNames/classNames';
