@@ -1,6 +1,6 @@
 {
   "name": "@dxworks/miles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/miles.js",
   "module": "src/miles.js",
   "license": "MIT",
