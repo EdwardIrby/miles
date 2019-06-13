@@ -28,19 +28,18 @@
     "access": "public"
   },
   "scripts": {
-    "test": "c8 npx tap src/**/*.test.js --no-coverage",
+    "test": "npx rite src/**/*.test.js",
     "build": "npx rollup -c rollup.config.js",
     "lint": "npx eslint ./src",
     "check": "npm run build && npm run lint && npm run test",
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@dxworks/rite": "latest",
-    "@dxworks/linting": "latest",
-    "rollup": "latest",
-    "rollup-plugin-cleanup": "latest",
-    "rollup-plugin-node-resolve": "latest",
-    "tap": "latest",
+    "@dxworks/rite": "^2.0.0",
+    "@dxworks/linting": "^0.0.17",
+    "rollup": "^1.15.1",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-node-resolve": "^5.0.1",
     "c8": "^5.0.1"
   }
 }
